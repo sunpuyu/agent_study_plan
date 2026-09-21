@@ -10,7 +10,7 @@
 
 | 周次 | 主题 | 本周状态 | 核心产出 |
 | --- | --- | --- | --- |
-| 第0周 | 前置准备：环境 + 基础自测 | ⬜ | GitHub 仓库 |
+| 第0周 | 前置准备：环境 + 基础自测 | ✅ | GitHub 仓库 |  有一点python基础，准备好了环境，直接往下走
 | 第1周 | 提示词工程 + LLM API 调用 | ⬜ | 多模型调用 SDK |
 | 第2周 | Embedding + 向量库 + RAG 基础 | ⬜ | 基础文档问答 RAG |
 | 第3周 | RAG 进阶 + LangChain 基础 | ⬜ | 优化版 RAG（HyDE+重排） |
@@ -30,10 +30,10 @@
 
 **本周目标**：搭建环境、自测基础、确认起点
 
-- [ ] Python 环境：3.10~3.11，安装 VSCode、Git
-- [ ] 基础自测：类、装饰器、异步 async、requests、pydantic，薄弱点补基础
-- [ ] 申请大模型 API：Qwen、GLM；安装本地向量库 Chroma/FAISS
-- [ ] 建立 GitHub 仓库，新建 README（存放全部代码与笔记）
+- [✅] Python 环境：3.10~3.11，安装 VSCode、Git
+- [❌] 基础自测：类、装饰器、异步 async、requests、pydantic，薄弱点补基础
+- [✅] 申请大模型 API：Qwen、GLM；安装本地向量库 Chroma/FAISS
+- [✅] 建立 GitHub 仓库，新建 README（存放全部代码与笔记）
 
 **本周产出**：环境可用，GitHub 仓库初始化
 
