@@ -42,6 +42,7 @@
 ## 第1周｜提示词工程 + LLM API 调用（总18h）
 
 **本周目标**：掌握 Prompt 工程与多模型调用，做出通用调用 SDK
+参考：https://github.com/shareAI-lab/learn-claude-code/
 
 - [ ] Day1：提示词基础：角色设定、Few-shot、CoT，写实验笔记
 - [ ] Day2：结构化输出 Prompt，强制 LLM 返回 JSON，测试不同模型差异
