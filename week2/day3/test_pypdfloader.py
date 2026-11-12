@@ -1,6 +1,6 @@
 from langchain_community.document_loaders import PyPDFLoader
 
-loader = PyPDFLoader("./reference/B.pdf")
+loader = PyPDFLoader("../pdf_demo/B.pdf")
 pages = loader.load()
 
 print(f"一共读取到 {len(pages)} 页")

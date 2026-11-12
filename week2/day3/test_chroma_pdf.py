@@ -1,6 +1,6 @@
 # 极简骨架，你可以直接扩充
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyMuPDFLoader  # 替代PyPDFLoader
 from langchain_community.vectorstores import Chroma
 from pathlib import Path
@@ -17,7 +17,7 @@ CHUNK_OVERLAP = 50
 TOP_K = 3
 # ======================================================
 
-loader = PyMuPDFLoader("./reference/A.pdf")
+loader = PyMuPDFLoader("../pdf_demo/A.pdf")
 pages = loader.load()
 
 # 2. 加载Embedding（沿用你Day1的BGE）
