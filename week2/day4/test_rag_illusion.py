@@ -44,13 +44,18 @@ vector_db.persist()
 
 # 5. 检索：query，拿top3
 # query = "手机RTK算法的定位精度是多少？"
-query = "手机RTK的工作流程及各流程的耗时情况？"
-retriever = vector_db.as_retriever(search_kwargs={"k":TOP_K})
-res = retriever.invoke(query)
+query = "手机的定位精度是多少？"
+# query = "手机RTK的工作流程及各流程的耗时情况？"
+# retriever = vector_db.as_retriever(search_kwargs={"k":TOP_K, score_threshold=0.7})
+# res = retriever.invoke(query)
 
-print("=====召回片段=====")
-for doc in res:
-    print(doc.page_content, id(doc))
+# 带分数检索
+docs_with_score = vector_db.similarity_search_with_score(query, k=3)
+for doc, score in docs_with_score:
+    print(f"相似度：{score:.4f} | 页码：{doc.metadata['page']+1} | 内容摘要：{doc.page_content[:200]}")
+
+# 组装上下文
+
 
 # 6. 拼接Prompt（RAG核心，把召回内容塞进去）
 prompt_template = """基于下面的参考内容回答问题，不知道就说不知道，不要编造：
@@ -59,7 +64,7 @@ prompt_template = """基于下面的参考内容回答问题，不知道就说�
 问题：{question}
 回答：
 """
-context = "\n".join([d.page_content for d in res])
+context = "\n".join([f"【相似度{score:.3f}，页码{doc.metadata['page']+1}】{doc.page_content}" for doc, score in docs_with_score])
 final_prompt = prompt_template.format(context=context, question=query)
 
 # 【这里接ollama/OpenAI兼容接口调用LLM】

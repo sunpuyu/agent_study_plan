@@ -15,3 +15,8 @@ python main.py
 # 退出环境
 deactivate
 ```
+
+### 网址收藏
+**模型库**
+HuggingFace https://huggingface.co/
+魔塔社区 https://www.modelscope.cn/
